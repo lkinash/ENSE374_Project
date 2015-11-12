@@ -4,6 +4,7 @@ public class WristbandAlarm extends Mode {
 
 	private Time time;
 	private Time alarmTime;
+	private boolean alarmOnOff;
 	
 	public void setTime(Time timeValue)
 	{
@@ -25,6 +26,17 @@ public class WristbandAlarm extends Mode {
 	public Time getAlarmTime()
 	{
 		return alarmTime;
+	}
+	
+	public void setAlarmOnOff(boolean alarmOn)
+	{
+		alarmOnOff = alarmOn;
+		return;
+	}
+	
+	public boolean getAlarmOnOff()
+	{
+		return alarmOnOff;
 	}
 	
 	public void wakeUpTime()
