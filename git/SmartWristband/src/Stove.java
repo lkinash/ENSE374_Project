@@ -15,6 +15,7 @@ public class Stove {
 	
 	public void setPreheatTemp(int tempValue)
 	{
+		preheatTemp = tempValue;
 		return;
 	}
 	
@@ -25,6 +26,7 @@ public class Stove {
 	
 	public void setStoveTimer(Time timeValue)
 	{
+		stoveTimer = timeValue;
 		return;
 	}
 	
@@ -35,6 +37,7 @@ public class Stove {
 	
 	public void setStoveOnOff(boolean stoveON)
 	{
+		stoveOnOff = stoveON;
 		return;
 	}
 	

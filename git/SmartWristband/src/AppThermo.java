@@ -6,22 +6,24 @@ public class AppThermo {
 	
 	public void setNewTemp(double tempValue)
 	{
+		newTemp = tempValue;
 		return;
 	}
 	
 	public void setAverageUserTemp(double temp)
 	{
+		averageUserTemp = temp;
 		return;
 	}
 	
 	public double getNewTemp()
 	{
-		return 1;
+		return newTemp;
 	}
 	
 	public double getAverageUserTemp()
 	{
-		return 1;
+		return averageUserTemp;
 	}
 	
 	public double calculateNewTemp()

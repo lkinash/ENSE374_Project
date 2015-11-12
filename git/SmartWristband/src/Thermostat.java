@@ -5,11 +5,12 @@ public class Thermostat {
 	
 	public double getTemp()
 	{
-		return 1;
+		return temp;
 	}
 	
 	public void setTemp(double tempValue)
 	{
+		temp = tempValue;
 		return;
 	}
 	

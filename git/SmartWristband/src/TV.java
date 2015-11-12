@@ -7,6 +7,7 @@ public class TV {
 	
 	public void setChannel(int channelValue)
 	{
+		channel = channelValue;
 		return;
 	}
 	
@@ -17,6 +18,7 @@ public class TV {
 	
 	public void setVolume(int volumeValue)
 	{
+		volume = volumeValue;
 		return;
 	}
 	
@@ -27,12 +29,13 @@ public class TV {
 	
 	public void setTVOnOff(boolean isTVOn)
 	{
+		TVonOff = isTVOn;
 		return;
 	}
 	
 	public boolean getTVOnOff()
 	{
-		return false;
+		return TVonOff;
 	}
 	
 	public TV()

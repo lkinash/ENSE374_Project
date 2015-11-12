@@ -15,6 +15,7 @@ public class Door {
 	
 	public void setLocked(boolean isLocked)
 	{
+		locked = isLocked;
 		return;
 	}
 	
@@ -25,6 +26,7 @@ public class Door {
 	
 	public void setOpen(boolean isOpen)
 	{
+		open = isOpen;
 		return;
 	}
 	
@@ -35,6 +37,7 @@ public class Door {
 	
 	public void setDoorTimer(Time setTime)
 	{
+		doorTimer = setTime;
 		return;
 	}
 	

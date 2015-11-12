@@ -6,6 +6,7 @@ public class Mode {
 	
 	public void setLedColour(int colour)
 	{
+		ledColour = colour;
 		return;
 	}
 	
@@ -15,6 +16,7 @@ public class Mode {
 	}
 	public void setMode(char modeName)
 	{
+		mode = modeName;
 		return;
 	}
 	public char getMode()

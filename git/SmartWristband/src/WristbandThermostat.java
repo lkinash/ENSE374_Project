@@ -5,12 +5,13 @@ public class WristbandThermostat {
 	
 	public void setUserTemp(double userTempValue)
 	{
+		userTemp = userTempValue;
 		return;
 	}
 	
 	public double getUserTemp()
 	{
-		return 1;
+		return userTemp;
 	}
 	
 	public void tempChecker()

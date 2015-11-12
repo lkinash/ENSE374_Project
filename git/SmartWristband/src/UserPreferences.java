@@ -9,41 +9,45 @@ public class UserPreferences {
 	
 	public int getUser()
 	{
-		return 1;
+		return user;
 	}
 	
 	public Time getAlarmTime()
 	{
-		return null;
+		return alarmTime;
 	}
 	
 	public int getFavoriteChannel()
 	{
-		return 1;
+		return favoriteChannel;
 	}
 	
 	public double getFavoriteTemp()
 	{
-		return 1;
+		return favoriteTemp;
 	}
 	
 	public void setUser(int userNumber)
 	{
+		user = userNumber;
 		return;
 	}
 	
 	public void setAlarmTime(Time timeOfAlarm)
 	{
+		alarmTime = timeOfAlarm;
 		return;
 	}
 	
 	public void setFavoriteChannel(int favoriteChannelNumber)
 	{
+		favoriteChannel  = favoriteChannelNumber;
 		return;
 	}
 	
-	public void setFavoriteTemp(double favortieTempNumber)
+	public void setFavoriteTemp(double favoriteTempNumber)
 	{
+		favoriteTemp = favoriteTempNumber;
 		return;
 	}
 }

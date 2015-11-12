@@ -7,6 +7,7 @@ public class AppStove {
 	
 	public void setPreheatTemp(int tempValue)
 	{
+		preheatTemp = tempValue;
 		return;
 	}
 	
@@ -17,6 +18,7 @@ public class AppStove {
 	
 	public void setStoveTimer(Time timerValue)
 	{
+		stoveTimer = timerValue;
 		return;
 	}
 	

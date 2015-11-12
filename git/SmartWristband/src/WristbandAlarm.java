@@ -7,22 +7,24 @@ public class WristbandAlarm {
 	
 	public void setTime(Time timeValue)
 	{
+		time = timeValue;
 		return;
 	}
 	
 	public Time getTime()
 	{
-		return null;
+		return time;
 	}
 	
 	public void setAlarmTime(Time timeValue)
 	{
+		alarmTime = timeValue;
 		return;
 	}
 	
-	public void getAlarmTime()
+	public Time getAlarmTime()
 	{
-		return;
+		return alarmTime;
 	}
 	
 	public void wakeUpTime()
