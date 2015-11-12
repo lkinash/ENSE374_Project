@@ -114,6 +114,28 @@ public class Mode extends JFrame{
 	
 	public void buttonUpPress()
 	{
+		char currentMode = getMode();
+		if (currentMode == Door)
+		{
+			wristbandDoor.unlockDoor();
+		}
+		else if (currentMode == alarmClock)
+		{
+			boolean on = true;
+			wristbandAlarm.setAlarmOnOff(on);
+		}
+		else if (currentMode == stove)
+		{
+			wristbandStove.stoveOff();
+		}
+		else if (currentMode == TV)
+		{
+			wristbandTV.channelUp();
+		}
+		else if (currentMode == thermo)
+		{
+			appThermo.calculateNewTemp();
+		}
 		return;
 	}
 	
