@@ -34,4 +34,29 @@ public class Mode {
 		return;
 	}
 	
+	public void buttonUpPress()
+	{
+		return;
+	}
+	
+	public void buttonDownPress()
+	{
+		return;
+	}
+	
+	public void buttonPlusPress()
+	{
+		return;
+	}
+	
+	public void buttonMinusPress()
+	{
+		return;
+	}
+	
+	public void buttonModePress()
+	{
+		return;
+	}
+	
 }
