@@ -3,6 +3,7 @@ public class Mode{
 
 	private int ledColour;
 	private char mode;
+	private boolean ledSecondaryOnOff;
 	
 	public void setLedColour(int colour)
 	{
@@ -12,8 +13,20 @@ public class Mode{
 	
 	public int getLedColour()
 	{
-		return 1;
+		return ledColour;
 	}
+	
+	public void set ledSecondaryOnOff(boolean onOffLed)
+	{
+		ledSecondaryOnOff = onOffLed;
+		return;
+	}
+	
+	public boolean getLedSecondaryOnOff()
+	{
+		return ledSecondaryOnOff;
+	}
+	
 	public void setMode(char modeName)
 	{
 		mode = modeName;
@@ -21,7 +34,7 @@ public class Mode{
 	}
 	public char getMode()
 	{
-		return 'a';
+		return mode;
 	}
 	
 	public void changeMode(char modeName)
