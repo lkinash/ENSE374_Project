@@ -1,5 +1,5 @@
 
-public class WristbandStove {
+public class WristbandStove extends Mode{
 
 	public void preheat()
 	{

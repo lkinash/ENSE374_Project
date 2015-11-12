@@ -45,4 +45,9 @@ public class TV {
 		TVonOff = false;
 	}
 	
+	public void connectToNetwork()
+	{
+		return;
+	}
+	
 }

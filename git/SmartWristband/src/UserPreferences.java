@@ -50,4 +50,9 @@ public class UserPreferences {
 		favoriteTemp = favoriteTempNumber;
 		return;
 	}
+	
+	public void connectToNetwork()
+	{
+		return;
+	}
 }

@@ -14,4 +14,9 @@ public class Thermostat {
 		return;
 	}
 	
+	public void connectToNetwork()
+	{
+		return;
+	}
+	
 }

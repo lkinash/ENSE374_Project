@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class WristbandAlarm {
+public class WristbandAlarm extends Mode {
 
 	private Time time;
 	private Time alarmTime;

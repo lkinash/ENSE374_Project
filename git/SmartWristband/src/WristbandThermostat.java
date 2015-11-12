@@ -1,5 +1,5 @@
 
-public class WristbandThermostat {
+public class WristbandThermostat extends Mode{
 
 	private double userTemp;
 	

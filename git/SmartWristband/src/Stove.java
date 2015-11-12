@@ -46,5 +46,10 @@ public class Stove {
 		return stoveOnOff;
 	}
 
+	public void connectToNetwork()
+	{
+		return;
+	}
+	
 	
 }

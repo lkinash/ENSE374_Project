@@ -1,5 +1,5 @@
 
-public class Mode {
+public class Mode{
 
 	private int ledColour;
 	private char mode;

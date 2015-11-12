@@ -1,5 +1,5 @@
 
-public class WristbandTV {
+public class WristbandTV extends Mode {
 
 
 	public void channelUp()

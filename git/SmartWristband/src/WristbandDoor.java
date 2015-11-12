@@ -1,5 +1,5 @@
 
-public class WristbandDoor {
+public class WristbandDoor extends Mode {
 
 	public void lockDoor()
 	{
