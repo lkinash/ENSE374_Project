@@ -9,6 +9,10 @@ public class Mode extends JFrame{
 	private char mode;
 	private boolean ledSecondaryOnOff;
 	
+	private ArrayList modeList = new ArrayList ();
+	modeList.add('t'); modeList.add('a'); modeList.add('h'); modeList.add('d'); modeList.add('s');
+	//t = TV, a = Alarm Clock, h = Thermostat, d = Door, s = Stove
+	
 	public Mode()
 	{
 		final JButton upButton = new JButton("UP");
@@ -141,21 +145,115 @@ public class Mode extends JFrame{
 	
 	public void buttonDownPress()
 	{
+		char currentMode = getMode();
+		if (currentMode == Door)
+		{
+			wristbandDoor.lockDoor();
+		}
+		else if (currentMode == alarmClock)
+		{
+		}
+		else if (currentMode == stove)
+		{
+			wristbandStove.preHeat();
+		}
+		else if (currentMode == TV)
+		{
+			wristbandTV.channelDown();
+		}
+		else if (currentMode == thermo)
+		{
+		}
 		return;
 	}
 	
 	public void buttonPlusPress()
 	{
+		char currentMode = getMode();
+		if (currentMode == Door)
+		{
+		}
+		else if (currentMode == alarmClock)
+		{
+		}
+		else if (currentMode == stove)
+		{
+		}
+		else if (currentMode == TV)
+		{
+			wristbandTV.volumeUp();
+		}
+		else if (currentMode == thermo)
+		{
+		}
 		return;
 	}
 	
 	public void buttonMinusPress()
 	{
+		char currentMode = getMode();
+		if (currentMode == Door)
+		{
+		}
+		else if (currentMode == alarmClock)
+		{
+		}
+		else if (currentMode == stove)
+		{
+		}if (currentMode == Door)
+		{
+		}
+		else if (currentMode == alarmClock)
+		{
+		}
+		else if (currentMode == stove)
+		{
+		}
+		else if (currentMode == TV)
+		{
+			wristbandTV.volumeDown();
+		}
+		else if (currentMode == thermo)
+		{
+		}
+		else if (currentMode == TV)
+		{
+			wristbandTV.volumeDown();
+		}
+		else if (currentMode == thermo)
+		{
+		}
 		return;
 	}
 	
 	public void buttonModePress()
 	{
+		char currentMode = getMode();
+		if (currentMode == 't')
+		{
+			currentMode = modeList.get(1);
+			setMode(currentMode);
+		}
+		else if (currentMode == 'a')
+		{
+			currentMode = modeList.get(2);
+			setMode(currentMode);
+		}
+		else if (currentMode == 'h')
+		{
+			currentMode = modeList.get(3);
+			setMode(currentMode);
+		}
+		else if (currentMode == 'd')
+		{
+			currentMode = modeList.get(4);
+			setMode(currentMode);
+		}
+		else if (currentMode == 's')
+		{
+			currentMode = modeList.get(0);
+			setMode(currentMode);
+		}
 		return;
 	}
 	
