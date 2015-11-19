@@ -41,6 +41,15 @@ public class WristbandAlarm extends Mode {
 	
 	public void wakeUpTime()
 	{
+		if(getAlarmOnOff == true)
+		{
+			wakeTime = getAlarmTime();
+			presentTime = getTime();
+			if (wakeTime == presentTime)
+			{
+				alarm();
+			}
+		}
 		return;
 	}
 	
