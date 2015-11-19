@@ -13,6 +13,11 @@ public class Mode extends JFrame{
 	modeList.add('t'); modeList.add('a'); modeList.add('h'); modeList.add('d'); modeList.add('s');
 	//t = TV, a = Alarm Clock, h = Thermostat, d = Door, s = Stove
 	
+	public static void main(String args[])
+	{
+		new Mode();
+	}
+	
 	public Mode()
 	{
 		final JButton upButton = new JButton("UP");
@@ -72,6 +77,14 @@ public class Mode extends JFrame{
 		getContentPane().add(plusButton);
 		getContentPane().add(minusButton);
 		getContentPane().add(modeButton);
+		
+		getContentPane().setLayout(new FlowLayout());		
+		
+		setTitle("Wristband");			//the top of the pane in the exe will say recordings
+		setDefaultCloseOperation(EXIT_ON_CLOSE);		//end the program when the window is closed
+		
+		setSize(200,150);	
+		setVisible(true);		
 	}
 	
 	public void setLedColour(int colour)
