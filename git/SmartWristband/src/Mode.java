@@ -108,6 +108,31 @@ public class Mode extends JFrame{
 	
 	public void changeMode(char modeName)
 	{
+		if (modeName == 't')
+		{
+			currentMode = modeList.get(1);
+			setMode(currentMode);
+		}
+		else if (modeName == 'a')
+		{
+			currentMode = modeList.get(2);
+			setMode(currentMode);
+		}
+		else if (modeName == 'h')
+		{
+			currentMode = modeList.get(3);
+			setMode(currentMode);
+		}
+		else if (modeName == 'd')
+		{
+			currentMode = modeList.get(4);
+			setMode(currentMode);
+		}
+		else if (modeName) == 's')
+		{
+			currentMode = modeList.get(0);
+			setMode(currentMode);
+		}
 		return;
 	}
 	
@@ -229,31 +254,7 @@ public class Mode extends JFrame{
 	public void buttonModePress()
 	{
 		char currentMode = getMode();
-		if (currentMode == 't')
-		{
-			currentMode = modeList.get(1);
-			setMode(currentMode);
-		}
-		else if (currentMode == 'a')
-		{
-			currentMode = modeList.get(2);
-			setMode(currentMode);
-		}
-		else if (currentMode == 'h')
-		{
-			currentMode = modeList.get(3);
-			setMode(currentMode);
-		}
-		else if (currentMode == 'd')
-		{
-			currentMode = modeList.get(4);
-			setMode(currentMode);
-		}
-		else if (currentMode == 's')
-		{
-			currentMode = modeList.get(0);
-			setMode(currentMode);
-		}
+		changeMode(currentMode);
 		return;
 	}
 	
