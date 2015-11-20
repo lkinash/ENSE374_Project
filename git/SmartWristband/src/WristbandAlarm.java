@@ -6,6 +6,13 @@ public class WristbandAlarm extends Mode {
 	private Time alarmTime;
 	private boolean alarmOnOff;
 	
+	public WristbandAlarm()
+	{
+		time = null;
+		alarmTime = null;
+		alarmOnOff = false;
+	}
+	
 	public void setTime(Time timeValue)
 	{
 		time = timeValue;
@@ -41,10 +48,10 @@ public class WristbandAlarm extends Mode {
 	
 	public void wakeUpTime()
 	{
-		if(getAlarmOnOff == true)
+		if(getAlarmOnOff() == true)
 		{
-			wakeTime = getAlarmTime();
-			presentTime = getTime();
+			Time wakeTime = getAlarmTime();
+			Time presentTime = getTime();
 			if (wakeTime == presentTime)
 			{
 				alarm();

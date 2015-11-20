@@ -53,13 +53,14 @@ public class Door {
 		return;
 	}
 	
-	public Time getDoorTimer()
+	public Time getDoorCloseTimer()
 	{
 		return closeTimer;
 	}
 	
 	public boolean checkLockedWatcher()
 	{
+		/*
 		open.addActionListener(new ActionListener(){		
 			
 			public void actionPerformed(ActionEvent e){
@@ -79,12 +80,14 @@ public class Door {
 				}
 			}
 		} );
+		*/
 		return false;
 	}
 	
 	
 	public boolean checkOpenWatcher()
 	{
+		/*
 		locked.addActionListener(new ActionListener(){		
 			
 			public void actionPerformed(ActionEvent e){
@@ -104,6 +107,7 @@ public class Door {
 				}
 			}
 		} );
+		*/
 		return false;
 	}
 	

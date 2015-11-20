@@ -10,18 +10,19 @@ public class Mode{
 	private String mode;
 	private boolean ledSecondaryOnOff;
 	
-	private ArrayList modeList = new ArrayList ();
-	
-	WristbandDoor wristbandDoor = new WristbandDoor();
+	//private ArrayList modeList = new ArrayList ();
+	/*
 	WristbandAlarm wristbandAlarm = new WristbandAlarm();
+	WristbandDoor wristbandDoor = new WristbandDoor();
 	WristbandStove wristbandStove = new WristbandStove();
 	WristbandTV wristbandTV = new WristbandTV();
 	WristbandThermostat wristbandThermostat = new WristbandThermostat();
-	
-	
+	AppThermo appThermo = new AppThermo();
+	*/
 	//t = TV, a = Alarm Clock, h = Thermostat, d = Door, s = Stove
 	
-	 final JLabel label = new JLabel("modepress");
+	 final JLabel label = new JLabel("Current Mode:            ");
+	 final JLabel result = new JLabel("Current Action Results: ");
 	
 	public static void main(String args[])
 	{
@@ -41,10 +42,13 @@ public class Mode{
 		final JButton minusButton = new JButton("MINUS");
 		final JButton modeButton = new JButton("MODE");
 		
+		 //result.setPreferredSize(new Dimension(175, 100));
+		 result.setVisible(true);
 		
-		 label.setText("Label Text");
-		 label.setPreferredSize(new Dimension(175, 100));
+		 //label.setPreferredSize(new Dimension(175, 100));
 		 label.setVisible(true);
+		
+		
 		 
 		 JPanel panel = new JPanel();
 		 
@@ -102,17 +106,21 @@ public class Mode{
 		panel.add(plusButton);
 		panel.add(minusButton);
 		panel.add(modeButton);
-		panel.add(label);
-			
+		panel.add(label);	
+		panel.add(result);
+	
+		
+		panel.setLayout(new FlowLayout());	
+		
 		frame.setTitle("Wristband");			//the top of the pane in the exe will say recordings
 
 		
 	    frame.pack();
-		frame.setSize(200, 200);	
+		frame.setSize(200, 220);	
 		frame.setVisible(true);	
 		
 	
-		modeList.add('t'); modeList.add('a'); modeList.add('h'); modeList.add('d'); modeList.add('s');
+		//modeList.add('t'); modeList.add('a'); modeList.add('h'); modeList.add('d'); modeList.add('s');
 		
 	}
 
@@ -150,7 +158,6 @@ public class Mode{
 	
 	public void changeMode(String modeName)
 	{
-		String currentMode;
 		//t = TV, a = Alarm Clock, h = Thermostat, d = Door, s = Stove
 		
 		if (modeName == "thermo")
@@ -192,23 +199,28 @@ public class Mode{
 		
 		if (currentMode == "Door")
 		{
-			wristbandDoor.unlockDoor();
+			result.setText("Door Unlocked");
+			//wristbandDoor.unlockDoor();
 		}
 		else if (currentMode == "alarmClock")
 		{
 			boolean on = true;
-			wristbandAlarm.setAlarmOnOff(on);
+			result.setText("Alarm Set On");
+			//wristbandAlarm.setAlarmOnOff(on);
 		}
 		else if (currentMode == "stove")
 		{
+			result.setText("Stove Turned Off");
 			//wristbandStove.stoveOff();
 		}
 		else if (currentMode == "TV")
 		{
+			result.setText("TV Channel Up");
 			//wristbandTV.channelUp();
 		}
 		else if (currentMode == "thermo")
 		{
+			result.setText("New Thermostat Temperature Calculated");
 			//appThermo.calculateNewTemp();
 		}
 		
@@ -221,6 +233,7 @@ public class Mode{
 		
 		if (currentMode == "Door")
 		{
+			result.setText("Door Locked");
 			//wristbandDoor.lockDoor();
 		}
 		else if (currentMode == "alarmClock")
@@ -228,10 +241,12 @@ public class Mode{
 		}
 		else if (currentMode == "stove")
 		{
-			//wristbandStove.preHeat();
+			result.setText("Stove Preheated");
+			//wristbandStove.preheat();
 		}
 		else if (currentMode == "TV")
 		{
+			result.setText("TV Channel Down");
 			//wristbandTV.channelDown();
 		}
 		else if (currentMode == "thermo")
@@ -256,6 +271,7 @@ public class Mode{
 		}
 		else if (currentMode == "TV")
 		{
+			result.setText("TV Volume Up");
 			//wristbandTV.volumeUp();
 		}
 		else if (currentMode == "thermo")
@@ -281,6 +297,7 @@ public class Mode{
 		}
 		else if (currentMode == "TV")
 		{
+			result.setText("TV Volume Down");
 			//wristbandTV.volumeDown();
 		}
 		else if (currentMode == "thermo")

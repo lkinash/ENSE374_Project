@@ -1,4 +1,3 @@
-
 public class WristbandStove extends Mode{
 
 	public void preheat()
