@@ -2,30 +2,52 @@ import java.awt.*;
 import javax.swing.*;
 import java.io.*;
 import java.awt.event.*;
+import java.util.*;
 
-public class Mode extends JFrame{
+public class Mode{
 
 	private int ledColour;
-	private char mode;
+	private String mode;
 	private boolean ledSecondaryOnOff;
 	
 	private ArrayList modeList = new ArrayList ();
-	modeList.add('t'); modeList.add('a'); modeList.add('h'); modeList.add('d'); modeList.add('s');
+	
+	WristbandDoor wristbandDoor = new WristbandDoor();
+	WristbandAlarm wristbandAlarm = new WristbandAlarm();
+	WristbandStove wristbandStove = new WristbandStove();
+	WristbandTV wristbandTV = new WristbandTV();
+	WristbandThermostat wristbandThermostat = new WristbandThermostat();
+	
+	
 	//t = TV, a = Alarm Clock, h = Thermostat, d = Door, s = Stove
+	
+	 final JLabel label = new JLabel("modepress");
 	
 	public static void main(String args[])
 	{
 		new Mode();
+		
 	}
 	
 	public Mode()
 	{
+		
+		JFrame frame = new JFrame("Wristband");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
 		final JButton upButton = new JButton("UP");
 		final JButton downButton = new JButton("DOWN");
 		final JButton plusButton = new JButton("PLUS");
 		final JButton minusButton = new JButton("MINUS");
 		final JButton modeButton = new JButton("MODE");
 		
+		
+		 label.setText("Label Text");
+		 label.setPreferredSize(new Dimension(175, 100));
+		 label.setVisible(true);
+		 
+		 JPanel panel = new JPanel();
+		 
 		upButton.setEnabled(true);
 		downButton.setEnabled(true);
 		plusButton.setEnabled(true);
@@ -67,26 +89,33 @@ public class Mode extends JFrame{
 		modeButton.addActionListener(new ActionListener(){		
 			
 			public void actionPerformed(ActionEvent e){
-	
+				
 				buttonModePress();
 				}
 			} );
 		
-		getContentPane().add(upButton);
-		getContentPane().add(downButton);
-		getContentPane().add(plusButton);
-		getContentPane().add(minusButton);
-		getContentPane().add(modeButton);
 		
-		getContentPane().setLayout(new FlowLayout());		
+		frame.add(panel);
 		
-		setTitle("Wristband");			//the top of the pane in the exe will say recordings
-		setDefaultCloseOperation(EXIT_ON_CLOSE);		//end the program when the window is closed
+		panel.add(upButton);
+		panel.add(downButton);
+		panel.add(plusButton);
+		panel.add(minusButton);
+		panel.add(modeButton);
+		panel.add(label);
+			
+		frame.setTitle("Wristband");			//the top of the pane in the exe will say recordings
+
 		
-		setSize(200,150);	
-		setVisible(true);		
-	}
+	    frame.pack();
+		frame.setSize(200, 200);	
+		frame.setVisible(true);	
+		
 	
+		modeList.add('t'); modeList.add('a'); modeList.add('h'); modeList.add('d'); modeList.add('s');
+		
+	}
+
 	public void setLedColour(int colour)
 	{
 		ledColour = colour;
@@ -98,7 +127,7 @@ public class Mode extends JFrame{
 		return ledColour;
 	}
 	
-	public void set ledSecondaryOnOff(boolean onOffLed)
+	public void setLedSecondaryOnOff(boolean onOffLed)
 	{
 		ledSecondaryOnOff = onOffLed;
 		return;
@@ -109,43 +138,45 @@ public class Mode extends JFrame{
 		return ledSecondaryOnOff;
 	}
 	
-	public void setMode(char modeName)
+	public void setMode(String modeName)
 	{
 		mode = modeName;
 		return;
 	}
-	public char getMode()
+	public String getMode()
 	{
 		return mode;
 	}
 	
-	public void changeMode(char modeName)
+	public void changeMode(String modeName)
 	{
-		if (modeName == 't')
+		String currentMode;
+		//t = TV, a = Alarm Clock, h = Thermostat, d = Door, s = Stove
+		
+		if (modeName == "thermo")
 		{
-			currentMode = modeList.get(1);
-			setMode(currentMode);
+			setMode("alarmClock");
 		}
-		else if (modeName == 'a')
+		else if (modeName == "alarmClock")
 		{
-			currentMode = modeList.get(2);
-			setMode(currentMode);
+			setMode("TV");
 		}
-		else if (modeName == 'h')
+		else if (modeName == "TV")
 		{
-			currentMode = modeList.get(3);
-			setMode(currentMode);
+			setMode("Door");
 		}
-		else if (modeName == 'd')
+		else if (modeName == "Door")
 		{
-			currentMode = modeList.get(4);
-			setMode(currentMode);
+			setMode("stove");
 		}
-		else if (modeName) == 's')
+		else if (modeName == "stove")
 		{
-			currentMode = modeList.get(0);
-			setMode(currentMode);
+			setMode("thermo");
 		}
+		else
+			setMode("thermo");
+		
+		 label.setText("Current Mode: " + getMode());
 		return;
 	}
 	
@@ -156,117 +187,112 @@ public class Mode extends JFrame{
 	
 	public void buttonUpPress()
 	{
-		char currentMode = getMode();
-		if (currentMode == Door)
+		String currentMode = getMode();
+		 label.setText("Current Mode: " + currentMode);
+		
+		if (currentMode == "Door")
 		{
 			wristbandDoor.unlockDoor();
 		}
-		else if (currentMode == alarmClock)
+		else if (currentMode == "alarmClock")
 		{
 			boolean on = true;
 			wristbandAlarm.setAlarmOnOff(on);
 		}
-		else if (currentMode == stove)
+		else if (currentMode == "stove")
 		{
-			wristbandStove.stoveOff();
+			//wristbandStove.stoveOff();
 		}
-		else if (currentMode == TV)
+		else if (currentMode == "TV")
 		{
-			wristbandTV.channelUp();
+			//wristbandTV.channelUp();
 		}
-		else if (currentMode == thermo)
+		else if (currentMode == "thermo")
 		{
-			appThermo.calculateNewTemp();
+			//appThermo.calculateNewTemp();
 		}
+		
 		return;
 	}
 	
 	public void buttonDownPress()
 	{
-		char currentMode = getMode();
-		if (currentMode == Door)
+		String currentMode = getMode();
+		
+		if (currentMode == "Door")
 		{
-			wristbandDoor.lockDoor();
+			//wristbandDoor.lockDoor();
 		}
-		else if (currentMode == alarmClock)
-		{
-		}
-		else if (currentMode == stove)
-		{
-			wristbandStove.preHeat();
-		}
-		else if (currentMode == TV)
-		{
-			wristbandTV.channelDown();
-		}
-		else if (currentMode == thermo)
+		else if (currentMode == "alarmClock")
 		{
 		}
+		else if (currentMode == "stove")
+		{
+			//wristbandStove.preHeat();
+		}
+		else if (currentMode == "TV")
+		{
+			//wristbandTV.channelDown();
+		}
+		else if (currentMode == "thermo")
+		{
+		}
+		
 		return;
 	}
 	
 	public void buttonPlusPress()
 	{
-		char currentMode = getMode();
-		if (currentMode == Door)
+		String currentMode = getMode();
+		
+		if (currentMode == "Door")
 		{
 		}
-		else if (currentMode == alarmClock)
+		else if (currentMode == "alarmClock")
 		{
 		}
-		else if (currentMode == stove)
+		else if (currentMode == "stove")
 		{
 		}
-		else if (currentMode == TV)
+		else if (currentMode == "TV")
 		{
-			wristbandTV.volumeUp();
+			//wristbandTV.volumeUp();
 		}
-		else if (currentMode == thermo)
+		else if (currentMode == "thermo")
 		{
 		}
+		
 		return;
 	}
 	
+	
 	public void buttonMinusPress()
 	{
-		char currentMode = getMode();
-		if (currentMode == Door)
+		String currentMode = getMode();
+		
+		if (currentMode == "Door")
 		{
 		}
-		else if (currentMode == alarmClock)
+		else if (currentMode == "alarmClock")
 		{
 		}
-		else if (currentMode == stove)
-		{
-		}if (currentMode == Door)
+		else if (currentMode == "stove")
 		{
 		}
-		else if (currentMode == alarmClock)
+		else if (currentMode == "TV")
+		{
+			//wristbandTV.volumeDown();
+		}
+		else if (currentMode == "thermo")
 		{
 		}
-		else if (currentMode == stove)
-		{
-		}
-		else if (currentMode == TV)
-		{
-			wristbandTV.volumeDown();
-		}
-		else if (currentMode == thermo)
-		{
-		}
-		else if (currentMode == TV)
-		{
-			wristbandTV.volumeDown();
-		}
-		else if (currentMode == thermo)
-		{
-		}
+		
 		return;
 	}
 	
 	public void buttonModePress()
 	{
-		char currentMode = getMode();
+		String currentMode = getMode();
 		changeMode(currentMode);
 		return;
 	}
